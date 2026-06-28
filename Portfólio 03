@@ -1,0 +1,13 @@
+sorteio
+{
+	inclua biblioteca Util
+	
+	funcao inicio()
+	{
+		inteiro numero_sorteado
+
+		escreva("Sorteando o número agora...\n")
+
+		numero_sorteado = Util.sorteia(1, 100)
+
+		escreva("Número sorteado: ", numero_sorteado)
