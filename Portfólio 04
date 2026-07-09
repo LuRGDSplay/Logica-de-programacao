@@ -1,0 +1,41 @@
+programa {
+    inclua biblioteca Calendario --> cal
+    inclua biblioteca Matematica --> mat
+    inclua biblioteca Texto --> txt
+    inclua biblioteca Util --> uti
+
+    funcao inicio() {
+      
+        inteiro dia = cal.dia_mes_atual()
+        inteiro mes = cal.mes_atual()
+        inteiro ano = cal.ano_atual()
+
+        cadeia saudacao = "Bom dia! Hoje é dia "
+        cadeia data_completa = saudacao + dia + "/" + mes + "/" + ano
+        cadeia mensagem_maiuscula = txt.caixa_alta(data_completa)
+
+        escreva(mensagem_maiuscula, "\n")
+        uti.aguarde(1500)
+
+        real calculo_base = mat.raiz(dia * 1.0, 2.0) + ano
+        real resultado_final = mat.arredondar(calculo_base, 2)
+
+        escreva("Número da sorte do dia: ", resultado_final, "\n")
+        uti.aguarde(1500)
+
+      
+        cadeia mensagens[3]
+        mensagens[0] = "Acredite nos seus sonhos!"
+        mensagens[1] = "Hoje será um dia produtivo."
+        mensagens[2] = "Espalhe coisas boas por aí."
+
+        inteiro indice_sorteio = uti.sorteia(0, 2)
+        inteiro total_mensagens = uti.numero_elementos(mensagens)
+
+        escreva("Pensamento do dia: ", mensagens[indice_sorteio], "\n")
+        escreva("(Sorteado dentre um total de ", total_mensagens, " opções.)\n")
+        uti.aguarde(2000)
+
+        escreva("Programa finalizado com sucesso!\n")
+    }
+}
